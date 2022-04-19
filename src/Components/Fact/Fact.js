@@ -1,9 +1,9 @@
 import axios from 'axios';
+import './Facts.css';
 import {useState, useEffect} from 'react';
 
 function Home() {
     const [fact, setFact] = useState(null);
-    console.log("This is fact" + fact)
 	// Function which requests the API.
 	const getRandomFact = async () => {
 		try {
@@ -29,8 +29,8 @@ function Home() {
 
 
 	return (
-		<div>
-			<button onClick={() => getRandomFact()}>Get a Random Fact</button>
+		<div className='DivFact__background'>
+			<button onClick={() => getRandomFact()} className="btn-success btn-lg">Get a Random Fact</button>
 			<h1>{fact}</h1>
 		</div>
 	);
